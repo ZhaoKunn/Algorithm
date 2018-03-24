@@ -1,0 +1,30 @@
+class solution
+{
+public:
+	bool Find(int target, vector<vector<int>> array)
+	{
+		int cowCount = array.size;
+		int colCount = array[0].size();
+
+		int i, j;//i为行数，j为列数
+		for (i = cowCount - 1, j = 0; i >= 0 && j < colCount;)
+		{
+			if (target == array[i][j])
+				return true;
+			if (target < array[i][j])
+			{
+				i = i - 1;
+				continue;
+			}
+			if (target > array[i][j])
+			{
+				j = j + 1;
+				continue;
+			}
+			
+	    }
+		return false;
+
+	}
+
+};
