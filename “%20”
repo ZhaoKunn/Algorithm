@@ -1,0 +1,31 @@
+class Solution {
+public:
+	void replaceSpace(char *str, int length) {
+		int oldstringLen;//原始字符串长度
+		int blankNum;//空格个数
+		for (oldstringLen = 0; str[oldstringLen] != '\0'; oldstringLen++)
+		{
+			if (str[oldstringLen] = ' ')
+			{
+				blankNum++;
+			}
+		}
+		int newstringLen = oldstringLen + blankNum*2;
+		str[newstringLen] = '/0';
+		int point1 = oldstringLen - 1;
+		int point2 = newstringLen - 1;
+		while (point1 >= 0 && point2 > point1)
+		{
+			if (str[point1 == ' '])
+			{
+				str[point2--] = '0';
+				str[point2--] = '2';
+				str[point2--] = '%';
+
+			}
+			else
+				str[point2--] = str[point1];
+			point1--;
+		}
+	}
+};
